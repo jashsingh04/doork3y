@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Container, Divider, Grid, Typography } from '@mui/material';
+import { Box, Container, Divider, Typography } from '@mui/material';
 
 const Hero = () => {
   return (
@@ -71,8 +71,8 @@ const Hero = () => {
           today.
         </Typography>
 
-        <Grid container spacing={4} sx={{ mt: 10 }}>
-          <Grid item xs={4}>
+        <Box sx={{ display: 'flex', flexWrap: 'wrap', mt: 10, mx: -2 }}>
+          <Box sx={{ width: '33.33%', px: 2 }}>
             <Typography
               variant="h5"
               sx={{
@@ -86,8 +86,8 @@ const Hero = () => {
               Register in minutes
             </Typography>
             <Divider sx={{ bgcolor: "#e7f1ff", width: 76, mt: 2 }} />
-          </Grid>
-          <Grid item xs={4}>
+          </Box>
+          <Box sx={{ width: '33.33%', px: 2 }}>
             <Typography
               variant="h5"
               sx={{
@@ -101,8 +101,8 @@ const Hero = () => {
               Explore 40+ sectors
             </Typography>
             <Divider sx={{ bgcolor: "#e7f1ff", width: 76, mt: 2 }} />
-          </Grid>
-          <Grid item xs={4}>
+          </Box>
+          <Box sx={{ width: '33.33%', px: 2 }}>
             <Typography
               variant="h5"
               sx={{
@@ -116,8 +116,56 @@ const Hero = () => {
               Track your investments
             </Typography>
             <Divider sx={{ bgcolor: "#e7f1ff", width: 172, mt: 2 }} />
-          </Grid>
-        </Grid>
+          </Box>
+        </Box>
+
+        <Box sx={{ display: 'flex', flexWrap: 'wrap', mt: 10, mx: -2 }}>
+          <Box sx={{ width: '33.33%', px: 2 }}>
+            <Typography
+              variant="h5"
+              sx={{
+                fontWeight: 700,
+                color: "#0c44b8",
+              }}
+            >
+              25+ years
+            </Typography>
+            <Typography variant="body2" sx={{ mt: 0.5 }}>
+              Lorem ipsum dolor sit amet consectetur adipiscing elit sed do
+            </Typography>
+            <Divider sx={{ bgcolor: "#e7f1ff", width: 76, mt: 2 }} />
+          </Box>
+          <Box sx={{ width: '33.33%', px: 2 }}>
+            <Typography
+              variant="h5"
+              sx={{
+                fontWeight: 700,
+                color: "#0c44b8",
+              }}
+            >
+              500+ customers
+            </Typography>
+            <Typography variant="body2" sx={{ mt: 0.5 }}>
+              Lorem ipsum dolor sit amet consectetur adipiscing elit sed do
+            </Typography>
+            <Divider sx={{ bgcolor: "#e7f1ff", width: 76, mt: 2 }} />
+          </Box>
+          <Box sx={{ width: '33.33%', px: 2 }}>
+            <Typography
+              variant="h5"
+              sx={{
+                fontWeight: 700,
+                color: "#0c44b8",
+              }}
+            >
+              Global partners
+            </Typography>
+            <Typography variant="body2" sx={{ mt: 0.5 }}>
+              Lorem ipsum dolor sit amet consectetur adipiscing elit sed do
+            </Typography>
+            <Divider sx={{ bgcolor: "#e7f1ff", width: 76, mt: 2 }} />
+          </Box>
+        </Box>
       </Container>
 
       <Box
@@ -152,4 +200,4 @@ const Hero = () => {
   );
 };
 
-export default Hero; 
+export default Hero;

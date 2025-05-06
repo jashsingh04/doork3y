@@ -1,6 +1,6 @@
 import React from 'react';
 import { Box, Container, Typography } from '@mui/material';
-import SectionHeader from '../common/SectionHeader/SectionHeader.tsx';
+import SectionHeader from '../common/SectionHeader/SectionHeader';
 
 const AboutUs = () => {
   return (

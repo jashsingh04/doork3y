@@ -1,7 +1,7 @@
 import React from 'react';
 import { Box, Container } from '@mui/material';
-import SectionHeader from '../common/SectionHeader/SectionHeader.tsx';
-import SectionTitle from '../common/SectionTitle/SectionTitle.tsx';
+import SectionHeader from '../common/SectionHeader/SectionHeader';
+import SectionTitle from '../common/SectionTitle/SectionTitle';
 
 const Investors = () => {
   return (

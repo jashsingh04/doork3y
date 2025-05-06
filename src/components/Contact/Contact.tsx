@@ -17,7 +17,7 @@ const Contact = () => {
     <Box sx={{ bgcolor: "#0c44b8", py: 10, color: "white" }}>
       <Container maxWidth="xl">
         <Grid container spacing={8}>
-          <Grid item xs={12} md={4}>
+          <Grid component="div" sx={{ gridColumn: { xs: "span 12", md: "span 4" } }}>
             <Typography
               variant="h2"
               sx={{
@@ -48,7 +48,7 @@ const Contact = () => {
               <TwitterIcon sx={{ fontSize: 40 }} />
             </Stack>
           </Grid>
-          <Grid item xs={12} md={8}>
+          <Grid component="div" sx={{ gridColumn: { xs: "span 12", md: "span 8" } }}>
             <Paper
               sx={{
                 bgcolor: "#f5fff3",
@@ -71,7 +71,7 @@ const Contact = () => {
               </Typography>
 
               <Grid container spacing={3}>
-                <Grid item xs={12} md={6}>
+                <Grid component="div" sx={{ gridColumn: { xs: "span 12", md: "span 6" } }}>
                   <Typography variant="body1" sx={{ mb: 1, color: "black" }}>
                     Full name
                   </Typography>
@@ -89,7 +89,7 @@ const Contact = () => {
                     }}
                   />
                 </Grid>
-                <Grid item xs={12} md={6}>
+                <Grid component="div" sx={{ gridColumn: { xs: "span 12", md: "span 6" } }}>
                   <Typography variant="body1" sx={{ mb: 1, color: "black" }}>
                     Company
                   </Typography>
@@ -107,7 +107,7 @@ const Contact = () => {
                     }}
                   />
                 </Grid>
-                <Grid item xs={12} md={6}>
+                <Grid component="div" sx={{ gridColumn: { xs: "span 12", md: "span 6" } }}>
                   <Typography variant="body1" sx={{ mb: 1, color: "black" }}>
                     Email
                   </Typography>
@@ -125,7 +125,7 @@ const Contact = () => {
                     }}
                   />
                 </Grid>
-                <Grid item xs={12} md={6}>
+                <Grid component="div" sx={{ gridColumn: { xs: "span 12" } }}>
                   <Typography
                     variant="body1"
                     sx={{ mb: 1, color: "black" }}
@@ -144,7 +144,7 @@ const Contact = () => {
                     }}
                   />
                 </Grid>
-                <Grid item xs={12}>
+                <Grid component="div" sx={{ gridColumn: { xs: "span 12" } }}>
                   <Typography variant="body1" sx={{ mb: 1, color: "black" }}>
                     Address
                   </Typography>
@@ -162,7 +162,7 @@ const Contact = () => {
                     }}
                   />
                 </Grid>
-                <Grid item xs={12}>
+                <Grid component="div" sx={{ gridColumn: { xs: "span 12" } }}>
                   <Typography variant="body1" sx={{ mb: 1, color: "black" }}>
                     Note
                   </Typography>
@@ -208,4 +208,4 @@ const Contact = () => {
   );
 };
 
-export default Contact; 
+export default Contact;

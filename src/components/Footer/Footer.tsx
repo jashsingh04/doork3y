@@ -1,42 +1,50 @@
 import React from 'react';
-import { Box, Container, Grid, Typography } from '@mui/material';
+import { Box, Container, Typography } from '@mui/material';
 
 const Footer = () => {
-  // Footer links
   const footerLinks = [
-    { title: "About", items: ["About", "Careers", "Press"] },
     {
-      title: "Legal",
-      items: ["Privacy Policy", "Terms Of Service", "Cookie Policy"],
+      items: ["About Us", "Our Services", "Contact Us", "Career"],
+    },
+    {
+      items: ["Terms & Conditions", "Privacy Policy", "FAQ", "Blog"],
     },
   ];
 
   return (
-    <Box sx={{ bgcolor: "#0c44b8", py: 5, color: "#f6fff4" }}>
+    <Box sx={{ bgcolor: "#f6fff4", py: 8 }}>
       <Container maxWidth="xl">
-        <Grid container spacing={2}>
+        <Box sx={{ display: 'flex', flexWrap: 'wrap', mx: -2 }}>
           {footerLinks.map((column, index) => (
-            <Grid item xs={6} key={index}>
+            <Box key={index} sx={{ width: '50%', px: 2 }}>
               {column.items.map((item, i) => (
                 <Typography
                   key={i}
-                  variant="h5"
                   sx={{
-                    fontFamily: "'Inter-Light', Helvetica",
-                    fontWeight: 300,
-                    fontSize: "2rem",
-                    mb: 2,
+                    fontSize: "0.875rem",
+                    color: "#839aff",
+                    mb: 1.5,
                   }}
                 >
                   {item}
                 </Typography>
               ))}
-            </Grid>
+            </Box>
           ))}
-        </Grid>
+        </Box>
+
+        <Typography
+          variant="body2"
+          sx={{
+            color: "#0c44b8",
+            mt: 4,
+          }}
+        >
+          &copy; 2025 DoorKey. All rights reserved.
+        </Typography>
       </Container>
     </Box>
   );
 };
 
-export default Footer; 
+export default Footer;

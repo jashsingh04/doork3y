@@ -1,6 +1,6 @@
 import React from 'react';
-import { Box, Container, Grid, Paper } from '@mui/material';
-import SectionHeader from '../common/SectionHeader/SectionHeader.tsx';
+import { Box, Container, Paper } from '@mui/material';
+import SectionHeader from '../common/SectionHeader/SectionHeader';
 
 const News = () => {
   return (
@@ -8,22 +8,22 @@ const News = () => {
       <Container maxWidth="xl">
         <SectionHeader title="NEWS" color="white" bgColor="white" />
 
-        <Grid container spacing={4} sx={{ mt: 4 }}>
-          <Grid item xs={12} md={4}>
+        <Box sx={{ display: 'flex', flexWrap: 'wrap', mt: 4, mx: -2 }}>
+          <Box sx={{ width: { xs: '100%', md: '33.33%' }, px: 2, mb: 4 }}>
             <Paper sx={{ bgcolor: "#f6fff4", height: 240 }} />
             <Paper sx={{ bgcolor: "#f6fff4", height: 494, mt: 4 }} />
-          </Grid>
-          <Grid item xs={12} md={4}>
+          </Box>
+          <Box sx={{ width: { xs: '100%', md: '33.33%' }, px: 2, mb: 4 }}>
             <Paper sx={{ bgcolor: "#f6fff4", height: 775 }} />
-          </Grid>
-          <Grid item xs={12} md={4}>
+          </Box>
+          <Box sx={{ width: { xs: '100%', md: '33.33%' }, px: 2, mb: 4 }}>
             <Paper sx={{ bgcolor: "#f6fff4", height: 369 }} />
             <Paper sx={{ bgcolor: "#f6fff4", height: 369, mt: 4 }} />
-          </Grid>
-        </Grid>
+          </Box>
+        </Box>
       </Container>
     </Box>
   );
 };
 
-export default News; 
+export default News;
