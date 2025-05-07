@@ -3,206 +3,196 @@ import {
   Box, 
   Button, 
   Container, 
-  Grid, 
-  Paper, 
-  Stack, 
   TextField, 
-  Typography 
+  Typography,
+  Divider
 } from '@mui/material';
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import TwitterIcon from "@mui/icons-material/Twitter";
+import InstagramIcon from "@mui/icons-material/Instagram";
 
 const Contact = () => {
   return (
-    <Box sx={{ bgcolor: "#0c44b8", py: 10, color: "white" }}>
+    <Box sx={{ bgcolor: "#FFFFFF", py: 8 }}>
       <Container maxWidth="xl">
-        <Grid container spacing={8}>
-          <Grid component="div" sx={{ gridColumn: { xs: "span 12", md: "span 4" } }}>
+        <Box sx={{ mb: 4 }}>
+          <Typography
+            variant="h6"
+            sx={{
+              color: "#0C44B8",
+              fontWeight: 600,
+              fontSize: "1rem",
+              mb: 1,
+            }}
+          >
+            CONTACT US
+          </Typography>
+          <Divider sx={{ width: 40, bgcolor: "#0C44B8", height: 2, mb: 3 }} />
+        </Box>
+        
+        <Box sx={{ display: 'flex', flexDirection: {xs: 'column', md: 'row'}, gap: 4 }}>
+          <Box sx={{ width: { xs: '100%', md: '42%' } }}>
             <Typography
-              variant="h2"
+              variant="h4"
               sx={{
-                color: "white",
-                fontFamily: "'Inter-Light', Helvetica",
-                fontWeight: 300,
-                fontSize: "4rem",
-                textAlign: "center",
-                mb: 4,
+                color: "#333333",
+                fontWeight: 700,
+                fontSize: { xs: "1.5rem", md: "1.75rem" },
+                mb: 3,
               }}
             >
-              CONTACT US
+              Get in Touch with Us
             </Typography>
+            
             <Typography
               variant="body1"
               sx={{
-                color: "white",
-                fontFamily: "'Inter-Medium', Helvetica",
-                fontWeight: 500,
-                fontSize: "1.25rem",
+                color: "#666666",
                 mb: 4,
+                maxWidth: 400,
+                lineHeight: 1.6,
               }}
             >
-              Some fluff about please reach out to us and stuff
+              Have questions about DoorKey? Interested in partnering with us? Ready to take your startup to the next level? We'd love to hear from you.
             </Typography>
-            <Stack direction="row" spacing={2}>
-              <LinkedInIcon sx={{ fontSize: 40 }} />
-              <TwitterIcon sx={{ fontSize: 40 }} />
-            </Stack>
-          </Grid>
-          <Grid component="div" sx={{ gridColumn: { xs: "span 12", md: "span 8" } }}>
-            <Paper
-              sx={{
-                bgcolor: "#f5fff3",
-                p: 4,
-                borderRadius: "48px",
-              }}
-            >
+            
+            <Box sx={{ display: 'flex', mb: 4 }}>
+              <Box sx={{ mr: 5 }}>
+                <Typography variant="body2" sx={{ fontWeight: 600, color: "#333333", mb: 1 }}>
+                  Email
+                </Typography>
+                <Typography variant="body2" sx={{ color: "#666666" }}>
+                  contact@doorkey.com
+                </Typography>
+              </Box>
+              
+              <Box>
+                <Typography variant="body2" sx={{ fontWeight: 600, color: "#333333", mb: 1 }}>
+                  Phone
+                </Typography>
+                <Typography variant="body2" sx={{ color: "#666666" }}>
+                  +1 (800) 123-4567
+                </Typography>
+              </Box>
+            </Box>
+            
+            <Box sx={{ display: 'flex', gap: 2 }}>
+              <LinkedInIcon sx={{ color: "#0C44B8", fontSize: 24 }} />
+              <TwitterIcon sx={{ color: "#0C44B8", fontSize: 24 }} />
+              <InstagramIcon sx={{ color: "#0C44B8", fontSize: 24 }} />
+            </Box>
+          </Box>
+          
+          <Box sx={{ width: { xs: '100%', md: '58%' } }}>
+            <Box sx={{ 
+              p: { xs: 3, md: 4 }, 
+              borderRadius: 2, 
+              bgcolor: "#F9F9F9",
+              border: "1px solid #EEEEEE" 
+            }}>
               <Typography
-                variant="h4"
+                variant="h6"
                 sx={{
-                  color: "#0c44b8",
-                  fontFamily: "'Inter-SemiBold', Helvetica",
+                  color: "#333333",
                   fontWeight: 600,
-                  fontSize: "2.5rem",
-                  textAlign: "center",
-                  mb: 4,
+                  fontSize: "1rem",
+                  mb: 3,
                 }}
               >
-                GET IN TOUCH WITH US!
+                Send us a message
               </Typography>
 
-              <Grid container spacing={3}>
-                <Grid component="div" sx={{ gridColumn: { xs: "span 12", md: "span 6" } }}>
-                  <Typography variant="body1" sx={{ mb: 1, color: "black" }}>
-                    Full name
-                  </Typography>
+              <Box sx={{ display: 'flex', flexDirection: 'column', gap: 3 }}>
+                <Box sx={{ display: 'flex', flexDirection: {xs: 'column', md: 'row'}, gap: 3 }}>
+                  <Box sx={{ width: { xs: '100%', md: '50%' } }}>
+                    <TextField
+                      fullWidth
+                      label="Full name"
+                      variant="outlined"
+                      size="small"
+                      sx={{
+                        bgcolor: "#FFFFFF",
+                        "& .MuiOutlinedInput-root": {
+                          "& fieldset": {
+                            borderColor: "#E0E0E0",
+                          },
+                        },
+                      }}
+                    />
+                  </Box>
+                  <Box sx={{ width: { xs: '100%', md: '50%' } }}>
+                    <TextField
+                      fullWidth
+                      label="Email address"
+                      variant="outlined"
+                      size="small"
+                      sx={{
+                        bgcolor: "#FFFFFF",
+                        "& .MuiOutlinedInput-root": {
+                          "& fieldset": {
+                            borderColor: "#E0E0E0",
+                          },
+                        },
+                      }}
+                    />
+                  </Box>
+                </Box>
+                <Box sx={{ width: '100%' }}>
                   <TextField
                     fullWidth
+                    label="Subject"
                     variant="outlined"
+                    size="small"
                     sx={{
-                      bgcolor: "#d9d9d966",
-                      borderRadius: "11px",
+                      bgcolor: "#FFFFFF",
                       "& .MuiOutlinedInput-root": {
                         "& fieldset": {
-                          borderColor: "#28569c",
+                          borderColor: "#E0E0E0",
                         },
                       },
                     }}
                   />
-                </Grid>
-                <Grid component="div" sx={{ gridColumn: { xs: "span 12", md: "span 6" } }}>
-                  <Typography variant="body1" sx={{ mb: 1, color: "black" }}>
-                    Company
-                  </Typography>
-                  <TextField
-                    fullWidth
-                    variant="outlined"
-                    sx={{
-                      bgcolor: "#d9d9d966",
-                      borderRadius: "11px",
-                      "& .MuiOutlinedInput-root": {
-                        "& fieldset": {
-                          borderColor: "#28569c",
-                        },
-                      },
-                    }}
-                  />
-                </Grid>
-                <Grid component="div" sx={{ gridColumn: { xs: "span 12", md: "span 6" } }}>
-                  <Typography variant="body1" sx={{ mb: 1, color: "black" }}>
-                    Email
-                  </Typography>
-                  <TextField
-                    fullWidth
-                    variant="outlined"
-                    sx={{
-                      bgcolor: "#d9d9d966",
-                      borderRadius: "11px",
-                      "& .MuiOutlinedInput-root": {
-                        "& fieldset": {
-                          borderColor: "#28569c",
-                        },
-                      },
-                    }}
-                  />
-                </Grid>
-                <Grid component="div" sx={{ gridColumn: { xs: "span 12" } }}>
-                  <Typography
-                    variant="body1"
-                    sx={{ mb: 1, color: "black" }}
-                  ></Typography>
-                  <TextField
-                    fullWidth
-                    variant="outlined"
-                    sx={{
-                      bgcolor: "#d9d9d966",
-                      borderRadius: "11px",
-                      "& .MuiOutlinedInput-root": {
-                        "& fieldset": {
-                          borderColor: "#28569c",
-                        },
-                      },
-                    }}
-                  />
-                </Grid>
-                <Grid component="div" sx={{ gridColumn: { xs: "span 12" } }}>
-                  <Typography variant="body1" sx={{ mb: 1, color: "black" }}>
-                    Address
-                  </Typography>
-                  <TextField
-                    fullWidth
-                    variant="outlined"
-                    sx={{
-                      bgcolor: "#d9d9d966",
-                      borderRadius: "11px",
-                      "& .MuiOutlinedInput-root": {
-                        "& fieldset": {
-                          borderColor: "#28569c",
-                        },
-                      },
-                    }}
-                  />
-                </Grid>
-                <Grid component="div" sx={{ gridColumn: { xs: "span 12" } }}>
-                  <Typography variant="body1" sx={{ mb: 1, color: "black" }}>
-                    Note
-                  </Typography>
+                </Box>
+                <Box sx={{ width: '100%' }}>
                   <TextField
                     fullWidth
                     multiline
                     rows={4}
+                    label="Message"
                     variant="outlined"
                     sx={{
-                      bgcolor: "#d9d9d966",
-                      borderRadius: "11px",
+                      bgcolor: "#FFFFFF",
                       "& .MuiOutlinedInput-root": {
                         "& fieldset": {
-                          borderColor: "#28569c",
+                          borderColor: "#E0E0E0",
                         },
                       },
                     }}
                   />
-                </Grid>
-              </Grid>
+                </Box>
+              </Box>
 
               <Button
                 variant="contained"
                 sx={{
-                  bgcolor: "#06235d",
-                  borderRadius: "16px",
-                  mt: 4,
+                  bgcolor: "#0C44B8",
+                  borderRadius: "4px",
+                  mt: 3,
                   px: 3,
                   py: 1,
-                  fontFamily: "'Inter-Bold', Helvetica",
-                  fontWeight: 700,
+                  fontWeight: 600,
                   fontSize: "0.875rem",
-                  textTransform: "uppercase",
+                  textTransform: "none",
+                  '&:hover': {
+                    bgcolor: "#0A2890"
+                  }
                 }}
               >
                 Send Message
               </Button>
-            </Paper>
-          </Grid>
-        </Grid>
+            </Box>
+          </Box>
+        </Box>
       </Container>
     </Box>
   );

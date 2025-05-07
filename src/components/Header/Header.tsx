@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { 
   AppBar, 
   Box, 
@@ -7,33 +7,52 @@ import {
   Toolbar, 
   Typography 
 } from '@mui/material';
-
-const placeholderLogo = "https://via.placeholder.com/130";
+import logoImage from '../../assets/doorkey_logo.png';
 
 const Header = () => {
+  useEffect(() => {
+    console.log('Logo image path:', logoImage);
+  }, []);
+
   // Navigation items
-  const navItems = ["Home", "About Us", "Contact"];
+  const navItems = ["About Us", "Products", "Contact"];
 
   return (
-    <AppBar position="static" sx={{ bgcolor: "#030e27", boxShadow: 0 }}>
-      <Toolbar sx={{ height: 125 }}>
-        <Box
-          component="img"
-          src={placeholderLogo}
-          alt="Doorkey Logo"
-          sx={{ width: 130, height: 130, mr: 2 }}
-        />
+    <AppBar position="static" sx={{ bgcolor: "#0A2890", boxShadow: 0 }}>
+      <Toolbar sx={{ height: 80, justifyContent: 'space-between' }}>
+        <Box sx={{ display: 'flex', alignItems: 'center' }}>
+          <Box
+            component="img"
+            src={logoImage}
+            alt="Doorkey Logo"
+            sx={{
+              height: 48,
+              width: 'auto',
+              mr: 2,
+              display: 'block' // Ensure it's displayed as block
+            }}
+            onError={(e) => {
+              console.error('Error loading logo:', e);
+              // Fallback text if image fails to load
+              const imgElement = e.target as HTMLImageElement;
+              imgElement.outerHTML = '<div style="height:48px;width:120px;background:#0A2890;color:#fff;display:flex;align-items:center;justify-content:center;margin-right:16px;">DoorKey</div>';
+            }}
+          />
+        </Box>
 
-        <Stack direction="row" spacing={3}>
+        <Stack direction="row" spacing={4} sx={{ display: { xs: 'none', md: 'flex' } }}>
           {navItems.map((item) => (
             <Typography
               key={item}
-              variant="h6"
+              variant="body1"
               sx={{
-                color: "#f6fff4",
-                fontFamily: "'Hanken_Grotesk-Light', Helvetica",
-                fontWeight: 300,
-                fontSize: "1.5rem",
+                color: "#FFFFFF",
+                fontWeight: 400,
+                fontSize: "1rem",
+                cursor: "pointer",
+                '&:hover': {
+                  color: '#e0e0e0'
+                }
               }}
             >
               {item}
@@ -41,39 +60,45 @@ const Header = () => {
           ))}
         </Stack>
 
-        <Box sx={{ flexGrow: 1 }} />
+        <Box sx={{ display: 'flex', alignItems: 'center' }}>
+          <Typography
+            variant="body2"
+            sx={{
+              color: "#FFFFFF",
+              mr: 3,
+              fontWeight: 400,
+              fontSize: "0.875rem",
+              cursor: "pointer",
+              '&:hover': {
+                color: '#e0e0e0'
+              }
+            }}
+          >
+            Log in
+          </Typography>
 
-        <Typography
-          variant="h6"
-          sx={{
-            color: "#f6fff4",
-            mr: 3,
-            fontFamily: "'Hanken_Grotesk-Light', Helvetica",
-            fontWeight: 300,
-            fontSize: "1.5rem",
-          }}
-        >
-          Log in
-        </Typography>
-
-        <Button
-          variant="contained"
-          sx={{
-            bgcolor: "#0c44b8",
-            borderRadius: "18.5px",
-            width: 196,
-            height: 58,
-            fontFamily: "'Hanken_Grotesk-Light', Helvetica",
-            fontWeight: 300,
-            fontSize: "1.5rem",
-            textTransform: "none",
-          }}
-        >
-          Sign Up
-        </Button>
+          <Button
+            variant="contained"
+            sx={{
+              bgcolor: "#FFFFFF",
+              color: "#0A2890",
+              borderRadius: "4px",
+              fontWeight: 600,
+              px: 2,
+              py: 0.75,
+              fontSize: "0.875rem",
+              textTransform: "none",
+              '&:hover': {
+                bgcolor: '#e0e0e0'
+              }
+            }}
+          >
+            Sign Up
+          </Button>
+        </Box>
       </Toolbar>
     </AppBar>
   );
 };
 
-export default Header; 
+export default Header;

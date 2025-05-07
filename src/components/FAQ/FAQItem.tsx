@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { Box, Paper, Typography } from '@mui/material';
-import ArrowRightIcon from "@mui/icons-material/ArrowRight";
+import { Box, Divider, Typography } from '@mui/material';
+import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import { FAQItemProps } from '../../types';
 
 const FAQItem: React.FC<FAQItemProps> = ({ question, index }) => {
@@ -11,13 +11,11 @@ const FAQItem: React.FC<FAQItemProps> = ({ question, index }) => {
   };
 
   return (
-    <Paper 
-      elevation={0}
+    <Box 
       sx={{ 
-        borderBottom: "1px solid black",
-        bgcolor: "transparent",
-        borderRadius: 0,
-        overflow: "hidden" 
+        borderBottom: "1px solid #E0E0E0",
+        overflow: "hidden",
+        py: 2
       }}
     >
       <Box 
@@ -26,37 +24,39 @@ const FAQItem: React.FC<FAQItemProps> = ({ question, index }) => {
           display: "flex", 
           alignItems: "center", 
           justifyContent: "space-between",
-          py: 3,
-          cursor: "pointer"
+          cursor: "pointer",
+          py: 1
         }}
       >
         <Typography
-          variant="h4"
+          variant="body1"
           sx={{
-            color: "black",
-            fontFamily: "'Inter-Light', Helvetica",
-            fontWeight: 300,
-            fontSize: "2.5rem",
-            textAlign: "center",
+            color: "#333333",
+            fontWeight: 500,
+            fontSize: "1rem",
           }}
         >
           {question}
         </Typography>
-        <ArrowRightIcon 
+        <KeyboardArrowDownIcon 
           sx={{ 
-            transform: expanded ? 'rotate(90deg)' : 'rotate(0deg)',
-            transition: 'transform 0.3s'
+            transform: expanded ? 'rotate(180deg)' : 'rotate(0deg)',
+            transition: 'transform 0.3s',
+            color: "#0C44B8"
           }} 
         />
       </Box>
       
       {expanded && (
-        <Box sx={{ p: 2, pb: 3 }}>
-          <Typography>Answer details would go here.</Typography>
+        <Box sx={{ py: 1.5, pl: 1, pr: 4 }}>
+          <Typography variant="body2" sx={{ color: "#666666", fontSize: "0.875rem" }}>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex, 
+            sit amet blandit leo lobortis eget.
+          </Typography>
         </Box>
       )}
-    </Paper>
+    </Box>
   );
 };
 
-export default FAQItem; 
+export default FAQItem;
