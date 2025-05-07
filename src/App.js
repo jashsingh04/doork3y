@@ -11,7 +11,7 @@ import {
   FAQ,
   Contact,
   Footer,
-} from "./components";
+} from "./components";  // Now importing from ./components folder
 
 function App() {
   return (

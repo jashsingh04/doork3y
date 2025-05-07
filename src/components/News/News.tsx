@@ -1,29 +1,44 @@
 import React from 'react';
-import { Box, Container, Grid, Paper } from '@mui/material';
-import SectionHeader from '../common/SectionHeader/SectionHeader.tsx';
+import { Box, Container, Typography, Paper, Divider } from '@mui/material';
 
 const News = () => {
   return (
-    <Box sx={{ bgcolor: "#0c44b8", py: 10 }}>
+    <Box sx={{ bgcolor: "#0C44B8", py: 8 }}>
       <Container maxWidth="xl">
-        <SectionHeader title="NEWS" color="white" bgColor="white" />
+        <Box sx={{ mb: 4 }}>
+          <Typography
+            variant="h6"
+            sx={{
+              color: "#FFFFFF",
+              fontWeight: 600,
+              fontSize: "1rem",
+              mb: 1,
+            }}
+          >
+            NEWS
+          </Typography>
+          <Divider sx={{ width: 40, bgcolor: "#FFFFFF", height: 2, mb: 3 }} />
+        </Box>
 
-        <Grid container spacing={4} sx={{ mt: 4 }}>
-          <Grid item xs={12} md={4}>
-            <Paper sx={{ bgcolor: "#f6fff4", height: 240 }} />
-            <Paper sx={{ bgcolor: "#f6fff4", height: 494, mt: 4 }} />
-          </Grid>
-          <Grid item xs={12} md={4}>
-            <Paper sx={{ bgcolor: "#f6fff4", height: 775 }} />
-          </Grid>
-          <Grid item xs={12} md={4}>
-            <Paper sx={{ bgcolor: "#f6fff4", height: 369 }} />
-            <Paper sx={{ bgcolor: "#f6fff4", height: 369, mt: 4 }} />
-          </Grid>
-        </Grid>
+        <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 3 }}>
+          <Box sx={{ width: { xs: '100%', md: '31%' } }}>
+            <Paper sx={{ bgcolor: "#FFFFFF", height: 120, mb: 3 }} />
+            <Paper sx={{ bgcolor: "#FFFFFF", height: 180, mb: 3 }} />
+            <Paper sx={{ bgcolor: "#FFFFFF", height: 100 }} />
+          </Box>
+          <Box sx={{ width: { xs: '100%', md: '31%' } }}>
+            <Paper sx={{ bgcolor: "#FFFFFF", height: 220, mb: 3 }} />
+            <Paper sx={{ bgcolor: "#FFFFFF", height: 220 }} />
+          </Box>
+          <Box sx={{ width: { xs: '100%', md: '31%' } }}>
+            <Paper sx={{ bgcolor: "#FFFFFF", height: 150, mb: 3 }} />
+            <Paper sx={{ bgcolor: "#FFFFFF", height: 120, mb: 3 }} />
+            <Paper sx={{ bgcolor: "#FFFFFF", height: 150 }} />
+          </Box>
+        </Box>
       </Container>
     </Box>
   );
 };
 
-export default News; 
+export default News;

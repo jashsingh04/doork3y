@@ -20,7 +20,7 @@ const SectionTitle = ({
         fontSize,
         textAlign: "center",
         my: 4,
-        ...(rest.sx || {})
+        ...(rest || {})
       }}
       {...rest}
     >
