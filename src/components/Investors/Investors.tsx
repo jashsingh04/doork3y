@@ -29,22 +29,25 @@ const Investors = () => {
   return (
     <Box sx={{ bgcolor: "#FFFFFF", py: 8 }}>
       <Container maxWidth="xl">
-        <Box sx={{ mb: 6 }}>
+        {/* Community section title - moved to top level for better visibility */}
+        <Box sx={{ mb: 4, textAlign: "center" }}>
           <Typography
             variant="h4"
             sx={{
               color: "#0C44B8",
               fontWeight: 700,
-              fontSize: "1.75rem",
+              fontSize: { xs: "1.5rem", md: "1.75rem" },
               mb: 2,
-              textAlign: "center"
+              display: "block",
+              width: "100%"
             }}
           >
             Meet Our Community
           </Typography>
         </Box>
 
-        <Box sx={{ mb: 2 }}>
+        {/* Investors section title */}
+        <Box sx={{ mb: 3 }}>
           <Typography
             variant="body2"
             sx={{
@@ -52,6 +55,8 @@ const Investors = () => {
               fontWeight: 500,
               fontSize: "0.875rem",
               mb: 2,
+              display: "block",
+              width: "100%"
             }}
           >
             Investors
@@ -62,10 +67,13 @@ const Investors = () => {
         <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 3 }}>
           {investorsData.map((investor) => (
             <Card key={investor.id} sx={{ 
-              maxWidth: 270,
+              width: { xs: "100%", sm: "calc(50% - 16px)", md: "calc(33.33% - 16px)" },
+              maxWidth: 350,
               borderRadius: 2, 
               boxShadow: '0 2px 8px rgba(0,0,0,0.1)',
-              flex: { xs: '1 1 100%', sm: '1 1 45%', md: '1 1 30%' }
+              margin: "0 auto",
+              display: "flex",
+              flexDirection: "column"
             }}>
               <CardMedia
                 component="img"
@@ -74,7 +82,7 @@ const Investors = () => {
                 alt={investor.name}
                 sx={{ objectFit: 'cover' }}
               />
-              <CardContent sx={{ pt: 2, pb: 2 }}>
+              <CardContent sx={{ pt: 2, pb: 2, display: "flex", flexDirection: "column", height: "100%" }}>
                 <Typography variant="body2" sx={{ color: "#666666", fontSize: "0.75rem", mb: 0.5 }}>
                   {investor.role}
                 </Typography>
@@ -84,23 +92,25 @@ const Investors = () => {
                 <Typography variant="body1" sx={{ fontWeight: 600, mb: 2 }}>
                   {investor.name}
                 </Typography>
-                <Button 
-                  variant="outlined" 
-                  size="small"
-                  sx={{ 
-                    borderColor: "#0C44B8", 
-                    color: "#0C44B8", 
-                    borderRadius: 1,
-                    fontSize: "0.75rem",
-                    textTransform: "none",
-                    '&:hover': {
-                      borderColor: "#0A2890",
-                      backgroundColor: "rgba(12, 68, 184, 0.04)"
-                    }
-                  }}
-                >
-                  Contact
-                </Button>
+                <Box sx={{ mt: "auto" }}>
+                  <Button 
+                    variant="outlined" 
+                    size="small"
+                    sx={{ 
+                      borderColor: "#0C44B8", 
+                      color: "#0C44B8", 
+                      borderRadius: 1,
+                      fontSize: "0.75rem",
+                      textTransform: "none",
+                      '&:hover': {
+                        borderColor: "#0A2890",
+                        backgroundColor: "rgba(12, 68, 184, 0.04)"
+                      }
+                    }}
+                  >
+                    Contact
+                  </Button>
+                </Box>
               </CardContent>
             </Card>
           ))}

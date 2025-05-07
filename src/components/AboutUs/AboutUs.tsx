@@ -28,7 +28,7 @@ const AboutUs = () => {
             fontSize: "1rem",
             mb: 2,
             maxWidth: 800,
-            lineHeight: 0.5,
+            lineHeight: 1.6, // Fixed line height to make text visible
           }}
         >
           In the fast-moving startup world, too many great ideas stall — not
@@ -44,7 +44,7 @@ const AboutUs = () => {
             fontSize: "1rem",
             mb: 4,
             maxWidth: 800,
-            lineHeight: 0.5,
+            lineHeight: 1.6, // Fixed line height to make text visible
           }}
         >
           We've built a platform that instantly connects startups with a
