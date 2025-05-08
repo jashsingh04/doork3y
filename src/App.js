@@ -11,6 +11,7 @@ import {
   FAQ,
   Contact,
   Footer,
+  Community,
 } from "./components";
 
 function App() {
@@ -19,12 +20,13 @@ function App() {
       <Header />
       <Hero />
       <AboutUs />
-      <Investors />
-      <Entrepreneurs />
+      {/* <Investors />
+      <Entrepreneurs /> */}
+      <Community />
       <News />
       <FAQ />
       <Contact />
-      <Footer />
+      {/* <Footer /> */}
     </Box>
   );
 }
